@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_first/views/page1.dart';
-import 'package:flutter_first/views/page2.dart';
-import 'package:flutter_first/views/page3.dart';
+import 'package:flutter_first/views/screens/page1.dart';
+import 'package:flutter_first/views/screens/page2.dart';
+import 'package:flutter_first/views/screens/page3.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
