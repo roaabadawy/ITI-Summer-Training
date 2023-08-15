@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_first/views/screens/homeScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,6 +13,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
+                  controller: passwordController,
                   decoration: InputDecoration(
                     hintText: 'password',
                     prefixIcon: const Icon(Icons.email),
@@ -122,18 +126,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     onPressed: () async {
                       if (_formKey.currentState!.validate()){
-                        final SharedPreferences prefs = await SharedPreferences.getInstance();
-                        await prefs.setString('email', emailController.text);
+                        bool result =  await firebaselogin(emailController.text, passwordController.text);
+                        if (result == null){
+                           final SharedPreferences prefs = await SharedPreferences.getInstance();
+                           await prefs.setString('email', emailController.text);
 
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) =>  HomeScreen(
-                            email: emailController.text,
-                          )),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Success')),
-                        );
+                           Navigator.push(
+                               context,
+                               MaterialPageRoute(builder: (context) =>  HomeScreen(
+                               email: emailController.text,
+                             )),
+
+                             );
+                        }else{
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('login failed')),
+                          );
+                        }
                       }
                     }),
                 const SizedBox(height: 30),
@@ -171,5 +180,23 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+  Future<bool> firebaselogin(String email, String password) async{
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+      );
+      if (userCredential.user != null){
+        return true;
+      }
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+    return false;
   }
 }

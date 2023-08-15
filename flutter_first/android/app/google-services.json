@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "369120262464",
+    "project_id": "itisummertraining-a7026",
+    "storage_bucket": "itisummertraining-a7026.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369120262464:android:9aa958f1ea3b748a9a22a5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_first"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369120262464-3ktnjeb9a5v5e0eh4cuve8go1dkrc0qv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXo-Gda7bsGrzDb6Ngo65SeQBEPb1EthY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369120262464-3ktnjeb9a5v5e0eh4cuve8go1dkrc0qv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

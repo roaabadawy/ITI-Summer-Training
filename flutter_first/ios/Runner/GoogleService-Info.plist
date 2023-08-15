@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>369120262464-6v5rul1q47s4ol6kljh54m4adjvjrt70.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.369120262464-6v5rul1q47s4ol6kljh54m4adjvjrt70</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAZdnHT3T-Nv7metKsI1oiBC2CXSpxdIp0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>369120262464</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterFirst</string>
+	<key>PROJECT_ID</key>
+	<string>itisummertraining-a7026</string>
+	<key>STORAGE_BUCKET</key>
+	<string>itisummertraining-a7026.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:369120262464:ios:f33df45888e286909a22a5</string>
+</dict>
+</plist>
